@@ -478,6 +478,17 @@
 	owner.remove_filter(MIRACLE_HEALING_FILTER)
 	owner.update_damage_hud()
 
+/atom/movable/screen/alert/status_effect/buff/healing/campfire
+	name = "Warming Respite"
+	desc = "The warmth of a fire soothes my ails."
+	icon_state = "buff"
+
+/datum/status_effect/buff/healing/campfire
+	id = "healing_campfire"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/healing/campfire
+	examine_text = null
+	duration = 10 SECONDS
+
 #define BLOODHEAL_DUR_SCALE_PER_LEVEL 3 SECONDS
 #define BLOODHEAL_RESTORE_DEFAULT 5
 #define BLOODHEAL_RESTORE_SCALE_PER_LEVEL 2
@@ -554,7 +565,7 @@
 	if(owner.blood_volume < BLOOD_VOLUME_NORMAL)
 		owner.blood_volume = min(owner.blood_volume + (healing_on_tick + 10), BLOOD_VOLUME_NORMAL)
 	if(wCount.len > 0)
-		owner.heal_wounds(healing_on_tick, list(/datum/wound/slash, /datum/wound/puncture, /datum/wound/bite, /datum/wound/bruise))
+		owner.heal_wounds(healing_on_tick, list(/datum/wound/slash, /datum/wound/puncture, /datum/wound/bite, /datum/wound/bruise, /datum/wound/dynamic))
 		owner.update_damage_overlays()
 	owner.adjustBruteLoss(-healing_on_tick, 0)
 	owner.adjustFireLoss(-healing_on_tick, 0)
@@ -1311,3 +1322,14 @@
 	var/obj/effect/temp_visual/recall_smoke/M = new /obj/effect/temp_visual/recall_smoke(get_turf(owner))
 	M.color = effect_color
 	pulse += 1
+
+/datum/status_effect/buff/parish_boon
+	id = "parish_boon"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/parish_boon
+	effectedstats = list("perception" = 1, "intelligence" = 1)
+	duration = 20 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/parish_boon
+	name = "Boon of the Parish"
+	desc = "You lent partial aid to the local church and bear a modest share of its blessing."
+	icon_state = "buff"

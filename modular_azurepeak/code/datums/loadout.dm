@@ -104,6 +104,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Heavy Hood"
 	path = /obj/item/clothing/head/roguetown/roguehood/shalal/heavyhood
 
+/datum/loadout_item/scarf
+	name = "Scarf"
+	path = /obj/item/clothing/head/roguetown/scarf
+
 /datum/loadout_item/nunveil
 	name = "Nun Veil"
 	path = /obj/item/clothing/head/roguetown/nun
@@ -216,6 +220,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/thief_cloak
 	name = "Rapscallion's Shawl"
 	path = /obj/item/clothing/cloak/thief_cloak
+
+/datum/loadout_item/poncho
+	name = "Poncho"
+	path = /obj/item/clothing/cloak/poncho
 
 /datum/loadout_item/wicker_cloak
 	name = "Wicker Cloak"
@@ -451,6 +459,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/leathertrou
 	name = "Leather Trousers"
 	path = /obj/item/clothing/under/roguetown/trou/leather
+
+/datum/loadout_item/leathershorts
+	name = "Leather Shorts"
+	path = /obj/item/clothing/under/roguetown/heavy_leather_pants/shorts
 
 /datum/loadout_item/sailorpants
 	name = "Seafaring Pants"
